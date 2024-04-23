@@ -3,38 +3,27 @@ package com.balex.firstcomposeproject
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.ui.Modifier
+import com.balex.firstcomposeproject.ui.theme.FirstComposeProjectTheme
 import com.balex.firstcomposeproject.ui.theme.InstagramProfileCard
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            //TimesTable()
-            InstagramProfileCard()
+            FirstComposeProjectTheme {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colors.background)
+                ) {
+                    InstagramProfileCard()
+                }
+            }
         }
     }
 }
-
-//@Preview
-//@Composable
-//fun CardTest() {
-//    Card(
-//        shape = RoundedCornerShape(
-//            topStart = 4.dp,
-//            topEnd = 4.dp
-//        ),
-//        border = BorderStroke(1.dp, Color.Black),
-//        colors = CardDefaults.cardColors(
-//            containerColor = Color.Green,
-//            contentColor = Color.White
-//        ),
-//
-//        ) {
-//
-//        InstagramProfileCard()
-//
-//    }
-//
-//
-//}
-
